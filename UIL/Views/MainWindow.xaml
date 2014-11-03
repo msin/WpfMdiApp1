@@ -1,0 +1,19 @@
+﻿<Window x:Class="WpfMdiApp1.UIL.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+        xmlns:views="clr-namespace:WpfMdiApp1.UIL.Views"
+        xmlns:cil="clr-namespace:WpfMdiApp1.CIL;assembly=WpfMdiApp1.CIL"
+        xmlns:extensions="clr-namespace:WpfMdiApp1.UIL.Extensions"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        WindowStartupLocation="CenterScreen" SnapsToDevicePixels="True"
+        DataContext="{extensions:DeferredContainer Type=cil:IMain}"
+        dx:ThemeManager.ThemeName="Office2007Blue"
+        Title="MDI Demo Window"  Height="600" Width="1024">
+
+    <dxmvvm:Interaction.Behaviors>
+        <dxmvvm:EventToCommand EventName="Loaded" Command="{Binding LoadedCommand}"/>
+    </dxmvvm:Interaction.Behaviors>
+
+    <views:MainView />
+</Window>
